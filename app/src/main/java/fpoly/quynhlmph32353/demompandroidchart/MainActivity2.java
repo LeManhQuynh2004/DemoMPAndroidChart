@@ -30,25 +30,16 @@ public class MainActivity2 extends AppCompatActivity {
         entries.add(new BarEntry(3, 15));
         entries.add(new BarEntry(4, 25));
         entries.add(new BarEntry(5, 30));
+        entries.add(new BarEntry(6, 80));
+        entries.add(new BarEntry(7, 10));
+        entries.add(new BarEntry(8, 25));
+        entries.add(new BarEntry(9, 30));
+        entries.add(new BarEntry(10, 20));
 
-        List<BarEntry> entries2 = new ArrayList<>();
-        entries2.add(new BarEntry(1, 11));
-        entries2.add(new BarEntry(2, 22));
-        entries2.add(new BarEntry(3, 35));
-        entries2.add(new BarEntry(4, 10));
-        entries2.add(new BarEntry(5, 40));
-
-        // Tạo BarDataSet từ danh sách dữ liệu
         BarDataSet dataSet = new BarDataSet(entries, "Doanh số bán hàng");
-        BarDataSet dataSet2 = new BarDataSet(entries2, "Doanh số nhập hàng");
-        // Thiết lập một số thuộc tính cho BarDataSet
         dataSet.setColor(Color.BLUE);
         dataSet.setValueTextColor(Color.BLACK);
         dataSet.setValueTextSize(12f);
-
-        dataSet2.setColor(Color.RED);
-        dataSet2.setValueTextColor(Color.BLACK);
-        dataSet2.setValueTextSize(12f);
 
         XAxis xAxis = barChart.getXAxis();
         xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
@@ -63,7 +54,7 @@ public class MainActivity2 extends AppCompatActivity {
         barChart.setDrawValueAboveBar(true);
 
 
-        BarData barData = new BarData(dataSet,dataSet2);
+        BarData barData = new BarData(dataSet);
         barChart.setData(barData);
     }
 }
